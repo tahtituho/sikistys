@@ -17,6 +17,8 @@
 
 // Source: https://gist.github.com/0b5vr/09ee96ca2efbe5bf9d64dad7220e923b
 // Small modifications made
+// * header is changed
+// * numiterations parametrized
 // =================================================================================================
 
 // -- sanity check ---------------------------------------------------------------------------------
@@ -45,13 +47,14 @@ try {
   ( async () => {
     const inputPath = resolve( process.cwd(), process.argv[ 2 ] );
     const outputPath = resolve( process.cwd(), process.argv[ 3 ] );
-  
+    const numiterations = Number.parseInt(process.argv[ 4 ] ?? "100");
+    
     const inputFile = await fs.promises.readFile( inputPath );
     const inputSize = inputFile.length;
     console.info( `Input size: \x1b[32m${ inputSize.toLocaleString() } bytes\x1b[0m` );
   
     const compressed = await zopfli.deflate( inputFile, {
-      numiterations: 100, // increase this number to shave your last bytes
+      numiterations, // increase this number to shave your last bytes
       blocksplitting: true,
     } );
   
