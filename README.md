@@ -24,7 +24,7 @@ When you feel like shader is ready to be executed in browser, do following steps
 This should open new browser tab to address http://localhost:8080/index.html
 
 ## Writing byte beat
-Find _onclick_-function in *main.js* and there you will se comment saying "write tune here". Paste your byte beat into that. NOTICE your byte beat might need some tweaking if you wrote in it https://greggman.com/downloads/examples/html5bytebeat/html5bytebeat.html. Start *http-server* like you did with shader and listen to your tune.
+Find _onclick_-function in *main.js* and there you will se comment saying "write tune here". Paste your byte beat into that. NOTICE your byte beat might need some tweaking if you wrote in it https://greggman.com/downloads/examples/html5bytebeat/html5bytebeat.html.
 
 ## Making release
 When you feel that shader and byte beat are good as they get, you should do release.
