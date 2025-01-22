@@ -1,5 +1,4 @@
-d = document;
-c = d.body.appendChild(d.createElement("canvas"));
+c = document.body.appendChild(document.createElement("canvas"));
 c.width = 1280;
 c.height = 720;
 
@@ -11,8 +10,6 @@ for (i in a = new AudioContext) {
     a[i[6]] = a[i];
 }
 
-f = requestAnimationFrame;
-
 cs = (src, type, shader = g.cS(type)) => {
     g.sS(shader, src);
     g.compileShader(shader);
@@ -22,7 +19,7 @@ cs = (src, type, shader = g.cS(type)) => {
 d = _ => {  
     g.uniform1f(g.gf(p, "t"), a.currentTime);
     g.dr(6, 0, 3);
-    f(d);
+    requestAnimationFrame(d);
 }
 
 c.onclick = _ => {
@@ -44,5 +41,5 @@ c.onclick = _ => {
 
     g.vA(g.ug(p), 2, 5120, g.bf(34962, g.cB()), 1, g.bD(34962, new Int8Array([1, -3, 1, 1]), 35044));
     g.eV(0);
-    f(d);
+    requestAnimationFrame(d);
 }
