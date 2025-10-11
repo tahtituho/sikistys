@@ -4,7 +4,7 @@ param (
 New-Item -ItemType Directory -Force -Path .\intermediate -ErrorAction SilentlyContinue
 tools\shader_minifier.exe -o intermediate/shader.js --format js --preserve-externals shader.frag
 New-Item -ItemType Directory -Force -Path .\release -ErrorAction SilentlyContinue
-$shader = (Get-Content -Path .\intermediate\shader.js -TotalCount 5)[-1].Substring(18)
+$shader = (Get-Content -Path .\intermediate\shader.js -TotalCount 3)[-1].Substring(18)
 Copy-Item .\main.js .\intermediate\
 $main = (Get-Content -Path .\intermediate\main.js)
 $main.Replace('shader_frag', $shader) | Out-File -FilePath .\intermediate\main.js
